@@ -6,6 +6,9 @@ abstract class AbstractCsvValidator
 
     private $errors = [];
 
+    /**
+     * @param array $header
+     */
     public function validateSchema(array $header)
     {
         if (count(array_diff(array_keys($this->schema), $header)) !== 0) {
@@ -13,6 +16,9 @@ abstract class AbstractCsvValidator
         }
     }
 
+    /**
+     * @param array $line
+     */
     public function validateLine(array $line)
     {
         foreach ($line as $element => $value) {
@@ -22,7 +28,10 @@ abstract class AbstractCsvValidator
         $this->checkExtraCondition($line);
     }
 
-
+    /**
+     * @param $element
+     * @param $value
+     */
     private function validateElement($element, $value)
     {
         $this->checkIsRequired($element, $value);

@@ -213,9 +213,11 @@ class EventModel extends AbstractModel
     }
 
     /**
-     * @inheritdoc
+     * @param array $result
+     *
+     * @return EventModel
      */
-    protected function map($result): EventModel
+    protected function map(array $result): EventModel
     {
         return $this
             ->setId($result['id'])

@@ -7,7 +7,10 @@ class EventCsvReader extends AbstractCsvReader
         $this->validator = new EventCsvValidator();
     }
 
-    public function buildModel(array $line)
+    /**
+     * @inheritdoc
+     */
+    public function buildModel(array $line): EventModel
     {
         $eventModel = new EventModel();
 
@@ -25,7 +28,7 @@ class EventCsvReader extends AbstractCsvReader
         return $eventModel;
     }
 
-    public function save(FileModel $fileModel, array  $line)
+    public function save(FileModel $fileModel, array $line)
     {
         $model = $this->buildModel($line);
 

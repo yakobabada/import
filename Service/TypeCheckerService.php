@@ -4,6 +4,7 @@ class TypeCheckerService
 {
     /**
      * @param $value
+     *
      * @return bool
      */
     public static function isInt($value): bool
@@ -17,6 +18,7 @@ class TypeCheckerService
 
     /**
      * @param $value
+     *
      * @return bool
      */
     public static function isString($value): bool

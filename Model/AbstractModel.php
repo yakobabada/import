@@ -13,14 +13,14 @@ abstract class AbstractModel
     }
 
     /**
-     * @return FileModel
+     * @return mixed
      */
     abstract public function save();
 
     /**
      * @param int $id
      *
-     * @return FileModel
+     * @return mixed
      */
     abstract public function find(int $id);
 }

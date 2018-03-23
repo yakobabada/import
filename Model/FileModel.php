@@ -73,9 +73,11 @@ class FileModel extends AbstractModel
     }
 
     /**
-     * @inheritdoc
+     * @param array $result
+     *
+     * @return FileModel
      */
-    protected function map($result)
+    protected function map(array $result): FileModel
     {
         return $this
             ->setId($result['id'])

@@ -8,7 +8,7 @@ class FileService
      *
      * @return array
      */
-    public function getFromDirectory($dir, $extension = null) : array
+    public function getFromDirectory($dir, $extension = null): array
     {
         $listFileAndDir = scandir($dir);
 

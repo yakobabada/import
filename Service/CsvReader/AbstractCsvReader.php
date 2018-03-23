@@ -6,7 +6,10 @@ Abstract class AbstractCsvReader
 
     protected $validator;
 
-    public function perform($file)
+    /**
+     * @param string $file
+     */
+    public function perform(string $file)
     {
         if (($handle = fopen($file, "r")) === false) {
             $this->log("readJobsFromFile: Failed to open file [$file]");
