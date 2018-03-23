@@ -1,3 +1,3 @@
 <?php
 
-define("LOG_DESTINATION", "/var/log/infinity/error.log");
+define("LOG_DESTINATION", "log/infinity/error.log");
