@@ -2,12 +2,6 @@
 
 class DatabaseConnectionManager extends PDO
 {
-    const PARAM_host='localhost';
-    const PARAM_port='3306';
-    const PARAM_db_name='infinity';
-    const PARAM_user='root';
-    const PARAM_db_pass='root';
-
     /**
      * DatabaseConnectionManager constructor.
      *
