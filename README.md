@@ -13,12 +13,10 @@ PHP 7, mysql 5.7
 
 ## Download and Installation
 
-- using github to projects directory
-  - `git clone https://github.com/yakobabada/import.git`
-  - `cd import/`
-
-- create database `infinity` and update connection parameters in `config/database.php` file.
-- import into your database using `infinity.sql`.
+- `git clone https://github.com/yakobabada/import.git`
+- `cd import/`
+- Create database `infinity` and update connection parameters in `config/database.php` file.
+- Import into your database schema from `infinity.sql`.
 
 ## Start import CSVs
 
