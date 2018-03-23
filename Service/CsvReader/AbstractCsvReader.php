@@ -6,13 +6,20 @@ Abstract class AbstractCsvReader
 
     protected $validator;
 
+    protected $sysLogService;
+
+    public function __construct()
+    {
+        $this->sysLogService = new SysLogService();
+    }
+
     /**
      * @param string $file
      */
     public function perform(string $file)
     {
         if (($handle = fopen($file, "r")) === false) {
-            $this->log("readJobsFromFile: Failed to open file [$file]");
+            $this->sysLogService->logWarning("readJobsFromFile: Failed to open file [$file]");
 
             return;
         }
@@ -34,7 +41,7 @@ Abstract class AbstractCsvReader
 
                 if (count($this->validator->getErrors()) !== 0) {
                     $errors = implode(', ', $this->validator->getErrors());
-                    $this->log("Errors; file: $file, errors: $errors");
+                    $this->sysLogService->logWarning("Errors; file: $file, errors: $errors");
 
                     break;
                 }
@@ -51,7 +58,7 @@ Abstract class AbstractCsvReader
 
             if (count($this->validator->getErrors()) !== 0) {
                 $errors = implode(', ', $this->validator->getErrors());
-                $this->log("Errors; file: $file, line: $lineNumber, errors: $errors");
+                $this->sysLogService->logWarning("Errors; file: $file, line: $lineNumber, errors: $errors");
 
                 continue;
             }
@@ -75,15 +82,6 @@ Abstract class AbstractCsvReader
         }
 
         return $line;
-    }
-
-    /**
-     * @param string $error
-     */
-    private function log(string $error)
-    {
-        openlog("infinity", 0, LOG_LOCAL0);
-        syslog(LOG_WARNING , $error);
     }
 
     abstract public function initValidator();
