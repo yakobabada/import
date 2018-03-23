@@ -26,4 +26,4 @@ PHP 7, mysql 5.7
 ## Log file
 
 - Log file is in `log/infinity/error.log`
-- preferred to move it into `/var/log`. Update the configuration in `Config/default.php`
+- Preferred to be moved into `/var/log`. Update the configuration in `Config/default.php`
