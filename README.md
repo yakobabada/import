@@ -1,6 +1,6 @@
-#CSV Import
+# CSV Import
 
-##Introduction
+## Introduction
 
 - The application was created from scratch and structured using command and frontController design pattern.
 - program should run once per minute using a system crontab . When run, it should
@@ -11,7 +11,7 @@
 
 PHP 7, mysql 5.7
 
-##Download and Installation
+## Download and Installation
 
 - using github to projects directory
   - `git clone https://github.com/yakobabada/import.git`
@@ -20,7 +20,7 @@ PHP 7, mysql 5.7
 - create database `infinity` and update connection parameters in `config/database.php` file.
 - import into your database using `infinity.sql`.
 
-##Start import CSVs
+## Start import CSVs
 
 - Run the command in the directory 
   - `php index.php importFile`
